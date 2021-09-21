@@ -60,7 +60,7 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="TabOne"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: Colors.tint,
       }}>
       <BottomTab.Screen
         name="TabOne"
@@ -77,7 +77,7 @@ function BottomTabNavigator() {
               <FontAwesome
                 name="info-circle"
                 size={25}
-                color={Colors[colorScheme].text}
+                color={Colors.text}
                 style={{ marginRight: 15 }}
               />
             </Pressable>

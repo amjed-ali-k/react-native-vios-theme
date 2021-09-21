@@ -1,7 +1,50 @@
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
+import useColorScheme from "../hooks/useColorScheme";
 
-export default {
+const tintColorLight = "#2f95dc";
+const tintColorDark = "#fff";
+
+const theme = useColorScheme();
+
+interface colors {
+  light: pallate;
+  dark: pallate;
+}
+
+interface pallate {
+  text: string;
+  background: string;
+  tint: string;
+  tabIconDefault: string;
+  tabIconSelected: string;
+  primary: string;
+  secondary: string;
+  warning: string;
+  danger: string;
+  medium: string;
+  light: string;
+  dark: string;
+  black: string;
+  white: string;
+  grey100: string;
+  grey200: string;
+  grey300: string;
+  grey400: string;
+  grey500: string;
+  grey600: string;
+  grey700: string;
+  fuchsiaBlue: string;
+  redOrange: string;
+  red: string;
+  orange: string;
+  yellow: string;
+  green: string;
+  greenAlt: string;
+  blue: string;
+  blueAlt: string;
+  purple: string;
+}
+
+export const colors: colors = {
   light: {
     text: "#000",
     background: "#fff",
@@ -69,3 +112,5 @@ export default {
     purple: "#9B51E0",
   },
 };
+
+export default colors[theme];
