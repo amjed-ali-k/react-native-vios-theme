@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, FormikConfig, FormikProps } from "formik";
+import { Formik, FormikConfig } from "formik";
 
 
 const Form = <Value extends {}>({ initialValues, onSubmit, validationSchema, children }: FormikConfig<Value>):JSX.Element => {

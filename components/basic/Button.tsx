@@ -10,13 +10,13 @@ import {Fonts} from "../../constants/Typography";
 
 export interface ButtonProps {
     label: string;
-    onPress: ()=> void;
+    onPress: (()=> void) | undefined;
     bold: boolean;
-    outline: boolean;
+    outline?: boolean;
     style: StyleProp<ViewStyle>;
-    type: PrimaryColorTypes;
-    gradient: keyof typeof GradientColors;
-    icon: React.ComponentProps<typeof MaterialCommunityIcons>['name']
+    type?: PrimaryColorTypes;
+    gradient?: keyof typeof GradientColors;
+    icon?: React.ComponentProps<typeof MaterialCommunityIcons>['name']
 }
 
 interface ChildrenProp {
@@ -29,7 +29,7 @@ export default function Button({
   bold,
   outline,
   style,
-  type,
+  type='primary',
   gradient,
   icon,
 }: ButtonProps): JSX.Element {
