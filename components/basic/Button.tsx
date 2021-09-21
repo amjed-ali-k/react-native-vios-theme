@@ -8,7 +8,7 @@ import {hexToRGB} from "../../constants/Func";
 import Colors, { gradient as GradientColors, PrimaryColorTypes } from "../../constants/Colors";
 import {Fonts} from "../../constants/Typography";
 
-interface ButtonProps {
+export interface ButtonProps {
     label: string;
     onPress: ()=> void;
     bold: boolean;

@@ -3,6 +3,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
 
 export type IconName = React.ComponentProps<typeof MaterialCommunityIcons>['name']
+
 interface ElementProps extends  React.ComponentProps<typeof MaterialCommunityIcons>{
   name: IconName
 }
