@@ -4,9 +4,7 @@ import { Text, View, TextProps, ViewProps } from "../Themed";
 
 import {hexToRGB} from "../../constants/Func";
 import Colors from "../../constants/Colors";
-import useColorScheme from '../../hooks/useColorScheme';
 
-const theme = useColorScheme()
 
 interface BadgeProps {
     color?: string;
@@ -21,6 +19,8 @@ const Badge = ({
   color = Colors.primary,
   title = "Sample Badge",
   style,
+  textProps,
+  viewProps,
   outline
 }: BadgeProps): JSX.Element => {
   const borderWidth = outline ? 1 : 0;
@@ -37,8 +37,9 @@ const Badge = ({
             borderWidth: borderWidth,
           },
         ]}
+        {...viewProps}
       >
-        <Text style={[styles.title, style, { color }]}>{title}</Text>
+        <Text style={[styles.title, style, { color }]} {...textProps}>{title}</Text>
       </View>
     </View>
   );
