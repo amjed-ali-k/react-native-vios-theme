@@ -2,13 +2,16 @@ import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
 
-
+export type IconName = React.ComponentProps<typeof MaterialCommunityIcons>['name']
+interface ElementProps extends  React.ComponentProps<typeof MaterialCommunityIcons>{
+  name: IconName
+}
 const Icon = ({
   color = Colors.primary,
   size = 24,
   name = "account",
   ...otherProps
-}: React.ComponentProps<typeof MaterialCommunityIcons>): JSX.Element => {
+}:ElementProps ): JSX.Element => {
   return (
     <MaterialCommunityIcons
       name={name}
