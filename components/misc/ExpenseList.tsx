@@ -22,32 +22,37 @@ const ExpenseList = ({
   ...otherProps
 }: ElementProps): React.ReactElement => {
   return (
-    <TouchableOpacity {...otherProps} style={styles.container}>
-      <View style={styles.textContainer}>
-        <Text style={styles.date}>{date}</Text>
-        <Text style={styles.title}>{title}</Text>
-        {subTitle && <Text style={styles.subTitle}>{subTitle}</Text>}
-      </View>
-      <View style={styles.amountContainer}>
-        <Text style={styles.amount}>
-          {sign ? "-" : ""}$ {amount}
-        </Text>
-        <View style={styles.iconContainer}>
-          <Icon name="menu-right" />
+    <View style={styles.parent}>
+      <TouchableOpacity {...otherProps} style={styles.container}>
+        <View style={styles.textContainer}>
+          <Text style={styles.date}>{date}</Text>
+          <Text style={styles.title}>{title}</Text>
+          {subTitle && <Text style={styles.subTitle}>{subTitle}</Text>}
         </View>
-      </View>
-    </TouchableOpacity>
+        <View style={styles.amountContainer}>
+          <Text style={styles.amount}>
+            {sign ? "-" : ""}$ {amount}
+          </Text>
+          <View style={styles.iconContainer}>
+            <Icon name="menu-right" />
+          </View>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
 export default ExpenseList;
 
 const styles = StyleSheet.create({
+  parent: {
+    borderTopColor: Colors.grey400,
+    borderTopWidth: 1,
+  },
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    borderTopColor: Colors.grey400,
-    borderTopWidth: 1,
+
     paddingVertical: 10,
   },
   textContainer: {},
