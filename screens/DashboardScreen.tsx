@@ -6,19 +6,17 @@ import Badge from "../components/basic/Badge";
 import Tags from "../components/basic/Tags";
 import ProductGridItem from "../components/shop/ProductGridItem";
 import Ticket from "../components/misc/Ticket";
-import IconWithName from '../components/basic/LabeledIcon';
-import { Text } from "../components/Themed";
+import IconWithName from "../components/basic/LabeledIcon";
 import Colors from "../constants/Colors";
 import Carousal from "../components/basic/Carousel";
 
 const DashboardScreen = () => {
   return (
-     
-    <ScrollView  style={styles.screens}>
+    <ScrollView scrollsToTop style={styles.screens}>
       <View style={styles.container}>
         {/* <Header /> */}
         {/* Carousal */}
-        <View >
+        <View>
           <Carousal height={200} delay={10000} />
         </View>
         {/* Menu */}

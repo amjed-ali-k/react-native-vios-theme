@@ -9,14 +9,14 @@ import Colors, { gradient as GradientColors, PrimaryColorTypes } from "../../con
 import {Fonts} from "../../constants/Typography";
 
 export interface ButtonProps {
-    label: string;
-    onPress: (()=> void) | undefined;
-    bold: boolean;
-    outline?: boolean;
-    style: StyleProp<ViewStyle>;
-    type?: PrimaryColorTypes;
-    gradient?: keyof typeof GradientColors;
-    icon?: React.ComponentProps<typeof MaterialCommunityIcons>['name']
+  label: string;
+  onPress?: (() => void) | undefined;
+  bold?: boolean;
+  outline?: boolean;
+  style?: StyleProp<ViewStyle>;
+  type?: PrimaryColorTypes;
+  gradient?: keyof typeof GradientColors;
+  icon?: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
 }
 
 interface ChildrenProp {
