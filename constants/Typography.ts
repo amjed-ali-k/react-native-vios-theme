@@ -1,7 +1,4 @@
 import Colors from "./Colors";
-import useColorScheme from "../hooks/useColorScheme";
-
-const theme = useColorScheme();
 
 export enum Fonts {
   heading = "ubuntu-reg",

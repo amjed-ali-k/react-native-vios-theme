@@ -1,10 +1,10 @@
-import useColorScheme from "../hooks/useColorScheme";
+// import useColorScheme from "../hooks/useColorScheme";
 
 const tintColorLight = "#2f95dc";
 const tintColorDark = "#fff";
 
-const theme = useColorScheme();
-
+// const theme = useColorScheme();
+const theme = "light";
 
 // Dark and Light Color Palette
 const lightColorPalette = {
@@ -77,8 +77,6 @@ const darkColorPalette = {
 
 export type ColorPalette = typeof lightColorPalette & typeof darkColorPalette;
 
-
-
 export const colors: TypesOfColors = {
   light: lightColorPalette,
   dark: darkColorPalette,
@@ -87,7 +85,6 @@ export interface TypesOfColors {
   light: ColorPalette;
   dark: ColorPalette;
 }
-
 
 export const gradient = {
   primary: ["#E64053", "#E14058", "#713EDC"],
@@ -99,6 +96,8 @@ export const gradient = {
 };
 
 // Primary Color Types | Colors included in Gradient and Normal Palette
-export type PrimaryColorTypes = keyof typeof gradient & keyof typeof lightColorPalette & keyof typeof darkColorPalette
+export type PrimaryColorTypes = keyof typeof gradient &
+  keyof typeof lightColorPalette &
+  keyof typeof darkColorPalette;
 
 export default colors[theme];

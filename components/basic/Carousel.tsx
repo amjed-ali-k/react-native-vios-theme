@@ -64,11 +64,11 @@ interface ItemProps {
 }
 
 interface ElementProps {
-    data: Frame[];
-    height: number;
-    delay: number;
+    data?: Frame[];
+    height?: number;
+    delay?: number;
     onPress?: (item: Frame)=>void;
-    ItemElement: typeof Item;
+    ItemElement?: typeof Item;
 }
 
 const Item = ({ title, image, height, onPress, subtitle }: ItemProps): React.ReactElement<any> => (

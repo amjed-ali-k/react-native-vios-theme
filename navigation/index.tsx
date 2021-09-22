@@ -18,6 +18,7 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import DashboardScreen from '../screens/DashboardScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -58,16 +59,16 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Dashboard"
       screenOptions={{
         tabBarActiveTintColor: Colors.tint,
       }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+        name="Dashboard"
+        component={DashboardScreen}
+        options={({ navigation }: RootTabScreenProps<'Dashboard'>) => ({
+          title: 'Dashboard',
+          tabBarIcon: ({ color }) => <TabBarIcon name="dashboard" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}

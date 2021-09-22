@@ -8,20 +8,20 @@ import { Fonts } from "../../constants/Typography";
 import { IconName } from "../basic/Icons";
 
 interface ElementProps {
-    title: string;
-    subTitle: string;
-    price: string;
-    rating: number;
-    wished: boolean;
-    priceSubTitle: string;
-    subTitleIcon: IconName;
-    count: number;
-    onPressImage: () => void;
-    onPressCount: () => void;
-    onPressMinus: () => void;
-    onLongPressCount: () => void;
-    onPressWish: () => void;
-    imageUri: string
+    title?: string;
+    subTitle?: string;
+    price?: string;
+    rating?: number;
+    wished?: boolean;
+    priceSubTitle?: string;
+    subTitleIcon?: IconName;
+    count?: number;
+    onPressImage?: () => void;
+    onPressCount?: () => void;
+    onPressMinus?: () => void;
+    onLongPressCount?: () => void;
+    onPressWish?: () => void;
+    imageUri?: string
 }
 
 const ProductGridItem = ({
