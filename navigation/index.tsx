@@ -19,7 +19,8 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import DashboardScreen from '../screens/DashboardScreen';
-import TransactionSummaryScreen from "../screens/TransactionSummaryScreen";
+import TransactionSummaryScreen from "../screens/shop/TransactionSummaryScreen";
+import CurrentBalanceScreen from "../screens/expense/CurrentBalanceScreen";
 
 export default function Navigation({
   colorScheme,
@@ -80,7 +81,7 @@ function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="Dashboard"
-        component={DashboardScreen}
+        component={CurrentBalanceScreen}
         options={({ navigation }: RootTabScreenProps<"Dashboard">) => ({
           title: "Dashboard",
           tabBarIcon: ({ color }) => (
@@ -105,7 +106,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="TestingTab"
-        component={TransactionSummaryScreen}
+        component={DashboardScreen}
         options={{
           title: "Testing Tab",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,

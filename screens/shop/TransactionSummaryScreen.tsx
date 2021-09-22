@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from "react";
 import LottieView from "lottie-react-native";
 
-import Heading from "../components/basic/Heading";
-import { Text, View } from "../components/Themed";
-import Button from "../components/basic/Button";
+import Heading from "../../components/basic/Heading";
+import { Text, View } from "../../components/Themed";
+import Button from "../../components/basic/Button";
 import { Dimensions, StyleSheet } from "react-native";
-import Colors from "../constants/Colors";
-import { Fonts } from "../constants/Typography";
+import Colors from "../../constants/Colors";
+import { Fonts } from "../../constants/Typography";
 
 export default (): React.ReactElement => {
   const ref = useRef<LottieView>(null);

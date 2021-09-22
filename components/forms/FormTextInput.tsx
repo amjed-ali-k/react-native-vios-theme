@@ -12,21 +12,23 @@ import { IconName } from "../basic/Icons";
 import { Text } from "../Themed";
 
 interface ElementProps extends React.ComponentProps<typeof FormTextInput> {
-    label?: string;
-    placeholder?: string;
-    width: number;
-    icon?: IconName;
-    onChangeText: (text:string)=>void;
+  label?: string;
+  placeholder?: string;
+  width?: number;
+  backgroundColor?: string;
+  icon?: IconName;
+  onChangeText?: (text: string) => void;
 }
 
 const TextInput = ({
   label,
   placeholder,
   width,
+  backgroundColor,
   onChangeText,
   icon,
   ...otherProps
-}:ElementProps):JSX.Element => {
+}: ElementProps): JSX.Element => {
   const [focused, setFocused] = useState({});
 
   const inputElement = useRef<FormTextInput>(null);
@@ -36,7 +38,7 @@ const TextInput = ({
 
   return (
     <TouchableWithoutFeedback onPress={onPress}>
-      <View style={[styles.container, { width: width }, focused]}>
+      <View style={[styles.container, { width, backgroundColor }, focused]}>
         <View style={styles.wrapper}>
           {label && <Text style={styles.label}>{label}</Text>}
           <FormTextInput
@@ -46,7 +48,7 @@ const TextInput = ({
               setFocused(styles.textFocus);
             }}
             onEndEditing={() => setFocused({})}
-            style={styles.textarea}
+            style={[styles.textarea, { backgroundColor }]}
             placeholder={placeholder}
             placeholderTextColor={Colors.grey100}
             onChangeText={onChangeText}

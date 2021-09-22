@@ -5,22 +5,21 @@ import Colors from "../../constants/Colors";
 import { hexToRGB } from '../../constants/Func';
 import { Text } from "../Themed";
 import Icon, { IconName } from "./Icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 interface ElementProps extends React.ComponentProps<typeof View> {
-    icon: IconName;
-    size?:number;
-    color?:string;
-    text?:string;
-    badge?:string;
+  icon: IconName;
+  size?: number;
+  color?: string;
+  text?: string | null;
+  badge?: string;
 }
 
 const IconWithName = ({
-  icon='account',
+  icon = "account",
   style,
   size = 35,
   color = "#DF405C",
-  text = "My Icon",
+  text,
   badge,
   ...otherProps
 }: ElementProps): JSX.Element => {
@@ -28,7 +27,6 @@ const IconWithName = ({
   return (
     <View style={[styles.container, style]} {...otherProps}>
       {badge && (
-         
         <View style={styles.badgeContainer}>
           <Text style={styles.badgeText}>{badge}</Text>
         </View>
@@ -48,7 +46,7 @@ const IconWithName = ({
         <Icon name={icon} size={size * 0.8} color={color} />
       </View>
 
-      <Text style={{ fontSize: size / 2.9 }}>{text}</Text>
+      {text && <Text style={{ fontSize: size / 2.9 }}>{text}</Text>}
     </View>
   );
 };
